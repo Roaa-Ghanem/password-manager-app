@@ -1,0 +1,148 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+migrate_working_dir/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/
+**/generated_plugin_registrant.dart
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# Android related
+*.apk
+*.aab
+*.keystore
+*.jks
+key.properties
+/android/.gradle/
+/android/local.properties
+/android/app/local.properties
+/android/app/google-services.json
+/android/app/src/debug/
+/android/app/src/profile/
+/android/app/src/main/res/values/google_maps_api.xml
+
+# iOS related
+*.ipa
+*.app
+*.dSYM.zip
+*.dSYM
+/Pods/
+Podfile.lock
+/ios/.symlinks/
+/ios/Flutter/App.framework
+/ios/Flutter/Flutter.framework
+/ios/Flutter/Generated.xcconfig
+/ios/Flutter/ephemeral/
+/ios/Flutter/flutter_assets/
+/ios/ServiceDefinitions.json
+/ios/Runner/GeneratedPluginRegistrant.*
+/ios/Flutter/flutter_export_environment.sh
+
+# macOS related
+*.dylib
+/ios/.vscode/
+/ios/.idea/
+
+# Windows related
+*.exe
+*.dll
+*.bat
+*.lnk
+/windows/flutter/
+/windows/runner/Debug/
+/windows/runner/Release/
+/windows/.vs/
+/windows/cmake-build-*/
+/windows/x64/
+/windows/build/
+
+# Web related
+*.orig
+*.log
+*.pid
+*.seed
+/lib/generated_plugin_registrant.dart
+/build/web/
+
+# Test and coverage
+coverage/
+test/.test_cache/
+*.gcov
+*.gcda
+*.gcno
+
+# Environment variables
+.env
+.env.local
+.env.production
+*.env
+
+# Keys and sensitive data
+**/secrets.dart
+**/keys.dart
+**/credentials.dart
+assets/certs/
+assets/keys/
+
+# Backup files
+*.bak
+*.old
+*.orig
+*.tmp
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# System files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# IDE files (اختياري - إذا كنت تريد استبعادها)
+.vscode/launch.json
+.vscode/tasks.json
+*.code-workspace
+
+# Package manager
+pubspec.lock  # يمكنك إزالة هذا السطر إذا كنت تريد مشاركة الإصدارات الدقيقة
