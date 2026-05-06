@@ -38,9 +38,9 @@ Designed with a strong focus on **privacy, security, and user experience**, this
 
 > Add your screenshots inside a `screenshots/` folder.
 
-| Home                          | Categories                                | Add Password                         |
-| ----------------------------- | ----------------------------------------- | ------------------------------------ |
-| ![Home](screenshots/home.png) | ![Categories](screenshots/categories.png) | ![Add](screenshots/add_password.png) |
+| Home                          | Categories                                | Add Password                |
+|-------------------------------|-------------------------------------------|-----------------------------|
+| ![Home](screenshots/home.jpg) | ![Categories](screenshots/categories.jpg) | ![Add](screenshots/add.jpg) |
 
 ---
 
