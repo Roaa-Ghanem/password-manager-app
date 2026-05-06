@@ -7,6 +7,7 @@ import '../widgets/password_list_tile.dart';
 import '../widgets/password_dialog.dart';
 import '../widgets/custom_search_bar.dart';
 import 'category_screen.dart';
+import 'settings_screen.dart';
 
 // تعريف Enum خارج الـ class
 enum AuthState { checking, needsRegistration, needsAuthentication, authenticated }
@@ -59,13 +60,27 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
       _authState = AuthState.checking;
     });
 
+    final isSupported = await _biometricService.checkBiometricSupport();
+
+    if (!isSupported) {
+      // إذا كان الجهاز لا يدعم البصمة، تخطى المصادقة
+      setState(() {
+        _authState = AuthState.authenticated;
+        _isLoading = false;
+      });
+      await _loadPasswords();
+      return;
+    }
+
     final isRegistered = await _biometricService.isBiometricRegistered();
 
     if (!isRegistered) {
+      // إذا كانت البصمة غير مفعلة، افتح التطبيق مباشرة
       setState(() {
-        _authState = AuthState.needsRegistration;
+        _authState = AuthState.authenticated;
         _isLoading = false;
       });
+      await _loadPasswords();
     } else {
       await _authenticate();
     }
@@ -451,6 +466,16 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
         foregroundColor: const Color.fromARGB(255, 98, 154, 181),
         elevation: 0,
         actions: [
+          IconButton(
+            icon: const Icon(Icons.settings),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SettingsScreen()),
+              );
+            },
+            tooltip: 'الإعدادات',
+          ),
           IconButton(
             icon: const Icon(Icons.category),
             onPressed: _showCategoriesDialog,

@@ -66,6 +66,7 @@ class _CategoryScreenState extends State<CategoryScreen> with SingleTickerProvid
             floating: false,
             pinned: true,
             backgroundColor: Colors.transparent,
+            foregroundColor: Colors.white,
             flexibleSpace: FlexibleSpaceBar(
               background: Container(
                 decoration: BoxDecoration(

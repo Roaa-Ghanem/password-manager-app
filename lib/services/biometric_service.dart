@@ -37,8 +37,10 @@ class BiometricService {
       );
 
       if (authenticated) {
-        final registered = await _secureStorage.read(key: _biometricRegisteredKey);
-        print("Registered: $registered");        return true;
+        // ✅ الحل: حفظ حالة التسجيل في secure storage
+        await _secureStorage.write(key: _biometricRegisteredKey, value: 'true');
+        print("تم تسجيل البصمة بنجاح وحفظ الحالة");
+        return true;
       }
       return false;
     } catch (e) {
@@ -56,7 +58,7 @@ class BiometricService {
 
     try {
       final result = await _localAuth.authenticate(
-        localizedReason: 'الرجاء المصادقة',
+        localizedReason: 'الرجاء المصادقة للوصول إلى كلمات المرور',
         options: const AuthenticationOptions(
           biometricOnly: true,
           stickyAuth: false,
@@ -67,5 +69,10 @@ class BiometricService {
     } finally {
       _isAuthenticating = false;
     }
+  }
+
+  // ✅ دالة لإعادة تعيين البصمة (لتغيير الإعدادات)
+  Future<void> resetBiometric() async {
+    await _secureStorage.delete(key: _biometricRegisteredKey);
   }
 }
